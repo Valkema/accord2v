@@ -1,0 +1,91 @@
+@import './../../constants/constants.scss';
+
+.list {
+	@extend %indent;
+    width: 90%;
+
+	&__wrapper {
+		@extend %indent;
+		list-style: none;
+	}
+
+	&__item {
+		@extend %indent;
+		background-color: $items-main-clr;
+		margin: 0.75rem;
+		position: relative;
+	}
+
+	&__item-title {
+		@extend %indent;
+		padding: 0.5rem;
+		position: relative;
+		cursor: pointer;
+	}
+
+	&__item-title:hover {
+		background-color: $items-accent-clr;
+	}
+
+	&__item-title::before {
+	    content: "";
+		height: 5px;
+		width: 15px;
+		background-color: $secondary-clr;
+		position: absolute;
+		z-index: 50;
+		top: 45%;
+		left: 97%;
+		border-radius: 20%;
+	}
+
+	&__item-title::after {
+		content: "";
+		height: 5px;
+		width: 15px;
+		background-color: $secondary-clr;
+		position: absolute;
+		z-index: 50;
+		top: 45%;
+		left: 97%;
+		border-radius: 20%;
+		transform: rotate(-90deg);
+		transition: transform 0.3s ease;
+	}
+
+	&__item-content {
+		@extend %indent;
+		height: 0px;
+		font-size: 0;
+		transition: all 0.5s ease;
+	}
+
+	&__item_active {
+		@extend %indent;
+		background-color: $items-main-clr;
+		margin: 0.75rem;
+		position: relative;
+	}
+
+	&__item_active > &__item-title {
+		@extend %indent;
+		padding: 0.5rem;
+		border: 1px solid $main-clr;
+		background-color: $items-accent-clr;
+		cursor: pointer;
+		position: relative;
+	}
+
+	&__item_active > &__item-title::after {
+		transform: rotate(0deg);
+		transition: transform 0.3s ease;
+	}
+
+	&__item_active > &__item-content {
+		@extend %indent;
+		height: auto;
+		font-size: 1rem;
+		padding: 0.5rem;
+		transition: all 0.5s ease;
+	}
+}

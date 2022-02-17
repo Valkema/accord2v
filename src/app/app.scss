@@ -1,0 +1,13 @@
+@import './constants/constants.scss';
+
+.App {
+  font-family: $main-font;
+  @extend %indent;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
